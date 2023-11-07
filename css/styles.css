@@ -1,0 +1,166 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url("Montserrat-VariableFont_wght.ttf") format("truetype"); /* Ruta relativa o absoluta de tu archivo .ttf */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  background-image: url("../img/bg-concert3.jpg");
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.6
+  ); /* Ajusta el último valor (0.5) para controlar la opacidad */
+  background-blend-mode: multiply;
+}
+
+h1 {
+  color: white;
+  width: 25%;
+  margin-left: 3%;
+  margin-top: 12%;
+}
+
+.cont-general {
+  width: 100%;
+  overflow-y: hidden;
+}
+
+p {
+  color: white;
+  width: 22%;
+  margin-left: 3%;
+  margin-top: 45px;
+}
+
+ul {
+  list-style: none;
+  font-size: 26px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  margin-top: -390px;
+  width: 100%;
+  animation: mover 1s linear forwards;
+}
+ul li {
+  padding: 30px;
+  border: 2px solid transparent; /* Borde inicialmente transparente */
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.cont-general ul li:nth-child(4) {
+  grid-column: 1;
+  grid-row: 3;
+  height: 322px;
+  padding: 40px;
+  animation: mostrar-borde-abajo-i 1s linear forwards 1s;
+  border-bottom: none;
+  border-left: none;
+}
+
+.cont-general ul li:nth-child(2) {
+  grid-column: 2;
+  grid-row: 2;
+  height: 322px;
+  padding: 40px;
+  animation: mostrar-borde 1s linear forwards 1s;
+}
+
+.cont-general ul li:nth-child(5) {
+  grid-column: 2;
+  grid-row: 3;
+  height: 322px;
+  padding: 40px;
+  animation: mostrar-borde-abajo 1s linear forwards 1s;
+  border-bottom: none;
+}
+
+.cont-general ul li:nth-child(1) {
+  grid-column: 3;
+  grid-row: 1;
+  height: 322px;
+  padding: 40px;
+  animation: mostrar-borde 1s linear forwards 1s;
+}
+
+.cont-general ul li:nth-child(3) {
+  grid-column: 3;
+  grid-row: 2;
+  height: 322px;
+  padding: 40px;
+  animation: mostrar-borde 1s linear forwards 1s;
+}
+
+.cont-general ul li:nth-child(6) {
+  grid-column: 3;
+  grid-row: 3;
+  height: 322px;
+  padding: 40px;
+  animation: mostrar-borde-abajo 1s linear forwards 1s;
+  border-bottom: none;
+}
+
+@keyframes mover {
+  from {
+    transform: translateY(100%);
+
+    /* Mueve el elemento hacia abajo al comienzo de la animación */
+  }
+  to {
+    transform: translateY(0);
+    /* Lo devuelve a su posición original */
+  }
+}
+
+@keyframes mostrar-borde {
+  from {
+    border-color: transparent; /* Borde inicialmente transparente */
+  }
+  to {
+    border: white 1px solid; /* Color del borde deseado */
+  }
+}
+
+@keyframes mostrar-borde-abajo {
+  from {
+    border-color: transparent; /* Borde inicialmente transparente */
+  }
+  to {
+    border: white 1px solid;
+    border-bottom: none;
+  }
+}
+
+@keyframes mostrar-borde-abajo-i {
+  from {
+    border-color: transparent; /* Borde inicialmente transparente */
+  }
+  to {
+    border: white 1px solid;
+    border-bottom: none;
+    border-left: none;
+  }
+}
+
+.cont-general ul li:hover {
+  padding: 70px;
+  transition: padding 0.5s;
+  background-color: rgba(255, 255, 255, 0.498);
+}
+
+.cont-general ul li:hover a {
+  color: black;
+  text-decoration: underline;
+}
